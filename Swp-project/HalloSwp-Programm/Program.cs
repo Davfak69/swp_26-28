@@ -17,7 +17,7 @@ class Program
         Console.WriteLine("um eine mathematische Operation auszuwaehlen:");
         Console.WriteLine("1) Quadrat");
         Console.WriteLine("2) Wurzel");
-        Console.WriteLine("3) Fakultaet");
+        Console.WriteLine("3) Fakultaet.");
 
         Console.Write("Ihre Auswahl: ");
 
