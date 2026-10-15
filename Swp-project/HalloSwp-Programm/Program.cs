@@ -1,26 +1,53 @@
 ﻿using System;
+using System.Numerics;
 
 class Program
 {
     static void Main()
     {
-        Console.Write("Bitte geben Sie einen Wert ein: ");
-        string eingabe = Console.ReadLine();
+        Console.Write("Geben Sie eine natuerliche Zahl ein: ");
 
-        Console.WriteLine(ErmittleDatentyp(eingabe));
-    }
+        if (!int.TryParse(Console.ReadLine(), out int zahl) || zahl < 1)
+        {
+            Console.WriteLine("Ungueltige Eingabe! Bitte eine natuerliche Zahl eingeben.");
+            return;
+        }
 
-    static string ErmittleDatentyp(string eingabe)
-    {
-        if (int.TryParse(eingabe, out int _))
-            return "Die Eingabe ist ein Integer.";
+        Console.WriteLine("Geben Sie eine Zahl zwischen 1 und 3 ein,");
+        Console.WriteLine("um eine mathematische Operation auszuwaehlen:");
+        Console.WriteLine("1) Quadrat");
+        Console.WriteLine("2) Wurzel");
+        Console.WriteLine("3) Fakultaet");
 
-        if (bool.TryParse(eingabe, out bool _))
-            return "Die Eingabe ist ein Bool.";
+        Console.Write("Ihre Auswahl: ");
 
-        if (double.TryParse(eingabe, out double _))
-            return "Die Eingabe ist eine rationale Zahl.";
+        if (!int.TryParse(Console.ReadLine(), out int operation)
+            || operation < 1 || operation > 3)
+        {
+            Console.WriteLine("Ungueltige Auswahl!");
+            return;
+        }
 
-        return "Die Eingabe ist ein String.";
+        switch (operation)
+        {
+            case 1:
+                Console.WriteLine($"Quadrat: {(double)zahl * zahl}");
+                break;
+
+            case 2:
+                Console.WriteLine($"Wurzel: {Math.Sqrt(zahl)}");
+                break;
+
+            case 3:
+                BigInteger fakultaet = 1;
+
+                for (int i = 1; i <= zahl; i++)
+                {
+                    fakultaet *= i;
+                }
+
+                Console.WriteLine($"Fakultaet: {fakultaet}");
+                break;
+        }
     }
 }
