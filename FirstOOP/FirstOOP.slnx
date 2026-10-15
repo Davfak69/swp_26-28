@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Kuh-test/Kuh-test.csproj" />
+  <Project Path="Kuh/Kuh.csproj" />
+</Solution>
