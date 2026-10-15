@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 class Program
 {
@@ -13,7 +14,7 @@ class Program
     static string ErmittleDatentyp(string eingabe)
     {
         if (int.TryParse(eingabe, out int _))
-            return "Die Eingabe ist ein Integer.";
+            return "Die Eingabe ist ein Integer..";
 
         if (bool.TryParse(eingabe, out bool _))
             return "Die Eingabe ist ein Bool.";
