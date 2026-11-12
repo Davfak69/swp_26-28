@@ -1,4 +1,4 @@
-
+// TypeScript Version: 6.0.3
 class Animal { // Basisklasse für Tiere
 
     private _name: string;
